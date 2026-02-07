@@ -1,0 +1,154 @@
+/* Admin Panel Layout */
+.adminPanel {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    height: 100vh;
+    /* Allow the panel to fill the entire screen height without causing overflow */
+    overflow: hidden;
+    /* Disable global page scrolling */
+}
+
+/* Control panel and shoe list now have independent scrolling */
+.adminLeft,
+.shoeList {
+    width: 70%;
+    height: calc(100vh - 40px);
+    /* Allow for scrolling within the viewport */
+    overflow-y: auto;
+    /* Enable individual scrollbars */
+    /* Set both to almost equal width, leaving a small gap */
+}
+
+/* Adjust form container size and padding for better fit */
+.formContainer {
+    background-color: #fff;
+    padding: 12px;
+    /* Reduced padding */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+}
+
+/* Header Styling */
+.header {
+    font-size: 28px;
+    /* Slightly smaller header */
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    /* Reduced margin */
+}
+
+/* Subheader styling */
+.subHeader {
+    color: #555;
+    font-size: 18px;
+    /* Reduced font size */
+    margin-bottom: 12px;
+    /* Reduced margin */
+}
+
+/* Form input and textarea styling */
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    /* Slightly smaller padding */
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    /* Smaller font size */
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+}
+
+/* Textarea should resize vertically */
+.textarea {
+    resize: vertical;
+}
+
+/* File input adjustments */
+.fileInput {
+    margin-top: 10px;
+}
+
+/* Button adjustments */
+.button {
+    padding: 10px 15px;
+    /* Slightly smaller padding */
+    margin-top: 12px;
+    /* Reduced margin */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    /* Slightly smaller font size */
+    transition: background-color 0.3s;
+}
+
+
+
+/* Edit and Delete Buttons */
+.editButton,
+.deleteButton {
+    padding: 6px 10px;
+    /* Reduced button size */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    /* Smaller font size */
+}
+
+.editButton {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+}
+
+.deleteButton {
+    background-color: #FF4D4D;
+    color: #fff;
+    border: none;
+}
+
+/* Make the shoe list scrollable */
+.shoeList {
+    max-height: calc(100vh - 60px);
+    /* Set height of shoe list to fill the remaining space */
+    overflow-y: auto;
+    /* Make it scrollable */
+    padding-right: 10px;
+    /* Optional: Add padding to the right */
+}
+
+/* Make sure the control panel is sticky */
+.adminLeft {
+    position: sticky;
+    top: 20px;
+    width: 25%;
+    /* Stick the control panel when scrolling */
+}
+
+/* Disable global page scroll */
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .adminPanel {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .adminLeft,
+    .shoeList {
+        width: 100%;
+        /* Stack the sections vertically on smaller screens */
+    }
+}

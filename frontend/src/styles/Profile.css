@@ -1,0 +1,180 @@
+/* General profile page styling */
+.profile-page {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+    /* White background for the entire page */
+    color: #333333;
+    /* Dark text for contrast */
+    min-height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth background transition */
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333333;
+    /* Dark color for header text */
+    transition: color 0.3s ease-in-out;
+    /* Smooth header color transition */
+}
+
+.message {
+    color: #555555;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Profile content section */
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.profile-box,
+.cart-box {
+    background: #ffffff;
+    /* White background for the boxes */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+    width: 48%;
+    /* 50% width to make it side-by-side */
+    transition: all 0.3s ease;
+    /* Smooth transition for all properties */
+}
+
+.profile-box:hover,
+.cart-box:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+    transform: translateY(-5px);
+    /* Lift the box a bit */
+}
+
+.profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #333333;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+    /* Transition for border color */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture:hover {
+    border-color: #ff4444;
+    /* Change border color on hover */
+}
+
+.forgot-password a {
+    color: #ffffff;
+    background-color: #ff4444;
+    /* Red button color */
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition for background and shadow */
+}
+
+.forgot-password a:hover {
+    background-color: #ff7878;
+    /* Lighten the red color on hover */
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+    /* Add a subtle glow effect */
+    transform: scale(1.05);
+    /* Slight scale increase for the hover effect */
+}
+
+/* Cart section styling */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    background-color: #f9f9f9;
+    /* Lighter background for cart items */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.105);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    /* Smooth transform and shadow transition */
+}
+
+.cart-item:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    box-shadow: 0px 6px 65px rgba(0, 0, 0, 0.107);
+    /* Stronger shadow on hover */
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.cart-item-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.cart-item-info p {
+    font-size: 14px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+    /* Lighter color for loading text */
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 16px;
+    text-align: center;
+}

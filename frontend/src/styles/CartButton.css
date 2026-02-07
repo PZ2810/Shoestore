@@ -1,0 +1,82 @@
+/* Cart Button */
+.cart-button {
+    position: relative;
+    width: 240px;
+    height: 60px;
+    border-radius: 8px;
+    color: #fff;
+    background: #006995;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Button click effect */
+.cart-button:active {
+    transform: scale(0.9);
+}
+
+/* Cart icon */
+.cart-button .fa-shopping-cart {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 2rem;
+}
+
+/* Box icon */
+.cart-button .fa-box {
+    position: absolute;
+    top: -20%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-size: 1.2rem;
+}
+
+/* Cart animation */
+.cart-button.clicked .fa-shopping-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+
+/* Box animation */
+.cart-button.clicked .fa-box {
+    animation: box 1.5s ease-in-out forwards;
+}
+
+/* Cart movement animation */
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+
+    40%,
+    60% {
+        left: 50%;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+/* Box movement animation */
+@keyframes box {
+
+    0%,
+    40% {
+        top: -20%;
+    }
+
+    60% {
+        top: 40%;
+        left: 52%;
+    }
+
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}

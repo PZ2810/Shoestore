@@ -1,0 +1,296 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4fd;
+    color: #0b0b0b;
+}
+
+
+/* Container */
+.shoeListContainer {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 80px 20px 20px;
+    /* Add padding for the navbar */
+}
+
+/* Title */
+.title {
+    text-align: left;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 20%;
+}
+
+.searchBar {
+    width: 20%;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border-radius: 50px;
+    outline: none;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.searchBar:focus {
+    border-color: #333;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+
+}
+
+/* Loading Animation */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.dots-loading {
+    display: flex;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #000;
+    animation: dot-blink 1.5s infinite alternate;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dot-blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Shoe Grid */
+.shoeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Increased card size */
+    gap: 130px !important;
+    padding-top: 20px;
+}
+
+.shoeCard {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 20px;
+    will-change: transform, opacity;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 12px 30px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    /* Reduced padding */
+    text-align: left;
+    width: 350px;
+    /* Reduced width of shoe cards */
+}
+
+.shoeImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transform: translate(10px, -65px) rotate(-20deg) scale(1.4);
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out;
+    /* Smooth animation */
+    z-index: 100000;
+
+    /* Subtle and farther shadow effect with lower intensity */
+    filter: drop-shadow(0px 0px 40px rgba(31, 31, 31, 0.196));
+}
+
+/* Hover effect - Scale up smoothly */
+.shoeImage:hover {
+    transform: translate(10px, -75px) rotate(-20deg) scale(1.45);
+    /* Slightly scale up on hover */
+}
+
+
+/* Hover effect for JS-based hover */
+.shoeCard.hover {
+    transform: translateY(-8px);
+}
+
+/* Optional: Animation for initial appearance */
+.shoeCard.animate {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+.shoeDetails {
+    padding: 15px;
+}
+
+.shoeName {
+    font-size: 1.5rem;
+    /* Larger font size */
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0;
+}
+
+.shoePrice {
+    font-size: 1.3rem;
+    /* Larger price text */
+    color: #333;
+    margin: 5px 0;
+}
+
+.shoeDescription {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Button Styles (Updated for less curve and no border) */
+.glowButton {
+    background-color: #344258;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    border: none;
+}
+
+.glowButton:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    /* Include 'transform' and 'box-shadow' for smooth transition */
+}
+
+
+/* No Results */
+.noResults {
+    text-align: center;
+    color: #777;
+    font-size: 1.2rem;
+}
+
+/* Shoe List Grid */
+.shoeGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    /* Reduced gap between shoe cards */
+    justify-content: flex-start;
+}
+
+
+
+/* Shoe Image styling */
+.shoeImage {
+    width: 100%;
+    height: 200px;
+    /* Reduced height */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Shoe Title and Price styling */
+.shoeTitle {
+    font-size: 16px;
+    /* Reduced font size */
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+}
+
+.shoePrice {
+    font-size: 14px;
+    /* Reduced font size */
+    color: #2c2c2c;
+}
+
+/* Shoe Description */
+.shoeDescription {
+    font-size: 12px;
+    /* Smaller font size */
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Shoe Actions */
+.shoeActions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    /* Reduced margin */
+}
+
+.parallelogramlist {
+    position: fixed;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(44, 49, 69), rgb(60, 70, 101));
+    transform: translateX(1300px) skew(20deg);
+    /* Start off-screen to the right */
+    animation: slide-inlist 1.3s cubic-bezier(0.8, 0, 0.05, 1) forwards;
+}
+
+@keyframes slide-inlist {
+    from {
+        transform: translateX(1800px) skew(20deg);
+        /* Start off-screen to the right */
+    }
+
+    to {
+        transform: translateX(800px) skew(15deg);
+        /* End closer to the right edge */
+    }
+}

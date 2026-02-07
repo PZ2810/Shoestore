@@ -1,0 +1,252 @@
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    /* Disables vertical scrolling */
+    overflow-x: hidden;
+    /* Initially hides the horizontal scrollbar */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Define Lobster-Regular font */
+@font-face {
+    font-family: 'Lobster';
+    src: url('./fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Define the fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Apply fade-in effect */
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Apply fade-out effect */
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Loading Animation for No Shoes Available */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* Adjust to center vertically */
+}
+
+.dots-loading {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #007bff;
+    animation: jump 1.2s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Optional: Customize "Loading" text */
+.loading-container p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.btn {
+    transform: translateY(10px);
+}
+
+.btn,
+.btn2 {
+    width: 200px;
+    /* Reduced from 300px */
+    height: 60px;
+    /* Reduced from 100px */
+    font-size: 18px;
+    /* Reduced from 30px */
+    text-align: center;
+    /* Matches height for vertical centering */
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+    background-size: 600%;
+    animation: anime 16s linear infinite;
+    border: none;
+    cursor: pointer;
+}
+
+.btn2 {
+    position: absolute;
+    margin-top: -50px;
+    /* Adjusted for reduced button height */
+    z-index: -1;
+    filter: blur(20px);
+
+    /* Slightly reduced blur for proportion */
+    opacity: 0.8;
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+
+    align-items: center;
+    cursor: pointer;
+    /* Makes the image clickable */
+    border-radius: 10px;
+    /* Optional: makes the corners rounded */
+}
+
+/* General reset for hidden elements */
+/* Ensure cards start hidden */
+.shoeCard1.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Fade-in effect + move from bottom to top when in view */
+.shoeCard1.fadeIn {
+    opacity: 1;
+    transform: translateY(0) scale(0.94);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.shoeCard1:hover {
+    transform: scale(1) translateY(0) !important;
+}
+
+
+
+/* Parent container */
+/* Parent container */
+.adidas-triangle-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #16202c 0%, #1f2d47 100%);
+    overflow: hidden;
+}
+
+/* Bottom two white diagonal stripes */
+.adidas-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* White bars styled using background */
+    background:
+        linear-gradient(135deg, white 25%, transparent 25%) 0 0,
+        linear-gradient(135deg, white 25%, transparent 25%) 50% 0;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+}
+
+.shoeImage1 {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transform: translate(10px, -20px) rotate(-20deg) scale(1.5);
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out;
+    /* Smooth animation */
+    z-index: 100000;
+
+    /* Subtle and farther shadow effect with lower intensity */
+    filter: drop-shadow(0px 0px 40px rgba(31, 31, 31, 0.196));
+}
+
+
+.parallelogramhome {
+    position: absolute;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(44, 49, 69), rgb(60, 70, 101));
+    transform: translateX(1300px) skew(20deg);
+    /* Start off-screen to the right */
+    animation: slide-inhome 1.3s cubic-bezier(0.8, 0, 0.05, 1) forwards;
+}
+
+@keyframes slide-inhome {
+    from {
+        transform: translateX(1800px) skew(20deg);
+        /* Start off-screen to the right */
+    }
+
+    to {
+        transform: translateX(800px) skew(15deg);
+        /* End closer to the right edge */
+    }
+}

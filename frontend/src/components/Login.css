@@ -1,0 +1,129 @@
+/* Global styles (same as Hamburger) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Header */
+.login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark gray */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    /* White background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    /* Light gray background */
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #333;
+    /* Dark gray on focus */
+}
+
+button[type="submit"] {
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    /* White text */
+    background-color: #333;
+    /* Dark gray button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #111;
+    /* Even darker gray on hover */
+}
+
+button[type="submit"]:disabled {
+    background-color: #ddd;
+    /* Light gray when disabled */
+    cursor: not-allowed;
+}
+
+/* Error message */
+.error-message {
+    color: #ff0000;
+    /* Red for error messages */
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Additional links for social media or footer section */
+.login-container .links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-container .links a {
+    color: #333;
+    /* Dark gray links */
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 10px;
+}
+
+.login-container .links a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+    }
+}

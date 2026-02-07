@@ -1,0 +1,356 @@
+/* General container */
+.hamburger-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 60px;
+    color: #f5f5f5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1101;
+    transition: background 0.7s ease;
+
+    /* Apply blur effect */
+}
+
+
+
+/* Logo */
+.logo h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+/* Search Container */
+.search-container {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 7px);
+    /* Adjust the 30px value to move it consistently */
+    width: 15%;
+    max-width: 400px;
+    z-index: 10000000;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    background: #2c2f33;
+    border: 2px solid #7289da;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.search-bar:focus {
+    background: #23272a;
+    border-color: #99aab5;
+    box-shadow: 0 4px 15px rgba(114, 137, 218, 0.5);
+}
+
+/* Add a hover effect for better user interaction */
+.search-bar:hover {
+    background: #23272a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: #1a1a1aa9;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    overflow: hidden;
+    backdrop-filter: blur(50px);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+    background: #767676;
+}
+
+.dropdown-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    margin-top: 1%;
+    right: 1%;
+    /* Keeps it 1% away from the right edge of the viewport */
+    z-index: 1101;
+    /* Ensure hamburger container is above the menu */
+    /* Ensure hamburger container is above the menu */
+}
+
+.hamburger {
+    display: flex;
+    position: fixed;
+    /* Keeps it in a fixed position relative to the viewport */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1201;
+    /* Ensure it stays above other content */
+    top: 15px;
+    /* Adjust this to set the distance from the top */
+    right: 20px;
+    /* Adjust this to set the distance from the right */
+}
+
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background: #f5f5f5;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animate into "X" */
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translateY(14px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-14px);
+}
+
+/* Menu Links */
+.menu-links {
+    position: fixed;
+    background: #243047a9;
+    backdrop-filter: blur(50px);
+    /* Semi-transparent for blur effect */
+    top: 0;
+    transform: translateX(20px);
+    width: 260px;
+    height: 400px;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.7s cubic-bezier(0.8, 0, 0.05, 1);
+    box-shadow: -4px 0px 40px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    border-radius: 0 0 10px 10px;
+
+    /* Ensure menu links are below the hamburger */
+}
+
+.menu-links.open {
+    transform: translateX(-240px);
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 10px 0;
+    font-size: 16px;
+    width: 100%;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #999;
+}
+
+/* Auth Buttons */
+.auth-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+/* Login Button */
+.login-button {
+    background-color: white;
+    color: #000 !important;
+    border: 1px solid #1d1d1d;
+}
+
+.login-button:hover {
+    background-color: #f0f0f0;
+    color: #000 !important;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Signup Button */
+.signup-button {
+    background-color: white;
+    color: #000 !important;
+    border: 1px solid #1d1d1d;
+}
+
+.signup-button:hover {
+    background-color: #f0f0f0;
+    color: #000 !important;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: #ff4444;
+    color: white;
+    border: 1px solid #ff4444;
+}
+
+.logout-button:hover {
+    background-color: #ff7878;
+    box-shadow: 0px 4px 10px rgba(255, 68, 68, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Space between buttons */
+.auth-button:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* Username Display */
+.username {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Auth Section Styling (Buttons at the Bottom) */
+.auth-section {
+    margin-top: auto;
+    /* Push buttons to the bottom */
+    width: 100%;
+    padding-top: 20px;
+}
+
+.group-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Username container to align the profile picture and username */
+.username-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.username-container img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username-container span {
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Hamburger Menu Styling */
+.auth-section {
+    margin-top: auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.auth-button {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+}
+
+/* Profile container in the hamburger menu */
+.username-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, filter 0.3s ease;
+    /* Added transition for smooth effect */
+}
+
+/* Only target the text and profile picture on hover */
+.username-link:hover img {
+    filter: brightness(0.8);
+    /* Darken profile picture */
+    transition: filter 0.3s ease;
+    /* Smooth transition for the filter */
+}
+
+.username-link:hover span {
+    color: #ccc;
+    /* Darken the text */
+    transition: color 0.3s ease;
+    /* Smooth transition for the text color */
+}
+
+/* Optional: Adjust the font weight and style */
+.username-link span {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.close-button {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: right;
+}

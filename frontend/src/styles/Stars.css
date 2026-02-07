@@ -1,0 +1,63 @@
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    /* Background layer */
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0;
+    /* Start hidden for twinkle effect */
+    animation: twinkle 1s infinite alternate;
+    /* Twinkle animation */
+    transition: opacity 1s ease;
+    z-index: 1;
+    /* Ensure stars are above other elements */
+}
+
+/* Optional: Expand clickable area */
+.star::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    /* Increase clickable area */
+    left: -10px;
+    /* Increase clickable area */
+    right: -10px;
+    /* Increase clickable area */
+    bottom: -10px;
+    /* Increase clickable area */
+}
+
+/* Define the diagonal movement animation */
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(0, 0);
+        /* Start position */
+    }
+
+    100% {
+        transform: translate(100px, -100px);
+        /* Move off-screen diagonally */
+    }
+}
+
+/* Define the twinkle effect */
+@keyframes twinkle {
+    0% {
+        opacity: 0.8;
+        /* Start opacity */
+    }
+
+    100% {
+        opacity: 0.2;
+        /* End opacity */
+    }
+}

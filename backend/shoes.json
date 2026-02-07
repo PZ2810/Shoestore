@@ -1,0 +1,30 @@
+[
+  {
+    "id": "3501edfb-1e80-4478-a819-b819e5cb9251",
+    "name": "a",
+    "price": "1",
+    "description": "a",
+    "image": "http://localhost:5000/images/1732682403129.jpg"
+  },
+  {
+    "name": "b",
+    "price": "1",
+    "description": "b",
+    "image": "http://localhost:5000/images/1732682420530.jpg",
+    "id": "10c8d43e-b2ae-4b32-864f-a25d3e4224da"
+  },
+  {
+    "id": "78d082e6-94fe-4162-aac8-92ae40369181",
+    "name": "e",
+    "price": "1",
+    "description": "e",
+    "image": "http://localhost:5000/images/1732682440649.jpg"
+  },
+  {
+    "name": "f",
+    "price": "1",
+    "description": "f",
+    "image": "http://localhost:5000/images/1732682480186.jpg",
+    "id": "f0478952-c375-4f50-b3c3-a90894d98a85"
+  }
+]
