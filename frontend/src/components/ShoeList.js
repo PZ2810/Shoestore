@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/ShoeList.css"; // Import the CSS file
+import TamboChat from "./TamboChat";
+
 
 const ShoeList = ({ shoes, onSelectShoe }) => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -113,6 +115,11 @@ const ShoeList = ({ shoes, onSelectShoe }) => {
                     </>
                 )}
             </div>
+            
+            <TamboChat  shoes={shoes}/>
+
+            
+
         </div>
     );
 };
