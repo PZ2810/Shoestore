@@ -1,1 +1,2 @@
 # Shoestore
+This project is a full-stack shoe e-commerce platform built using React for the frontend and Node.js with Express for the backend. Users can browse shoes, search and filter products, view detailed product pages, manage carts, place orders, and manage profiles. The admin panel allows administrators to add, update, and delete products and manage contact information. The application is designed with scalability and clean UI/UX in mind.
